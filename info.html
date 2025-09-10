@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Πληροφορίες Καταλύματος - Akrotopi Apartments & Studios</title>
+    <meta name="description" content="Όλες οι πληροφορίες για το Akrotopi Apartments & Studios. Παροχές, κανόνες, και πρακτικές οδηγίες.">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Left side - Hamburger menu -->
+            <div class="nav-hamburger" id="nav-hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <!-- Center - Main navigation -->
+            <div class="nav-main">
+                <a href="accommodations.html" class="nav-link">ΔΙΑΜΕΡΙΣΜΑΤΑ</a>
+                <a href="about.html" class="nav-link">ΤΟ ΚΑΤΑΛΥΜΑ</a>
+                <a href="offers.html" class="nav-link">ΠΡΟΣΦΟΡΕΣ %</a>
+            </div>
+
+            <!-- Center - Logo -->
+            <div class="nav-logo">
+                <a href="index.html">
+                    <div class="logo-text">
+                        <span class="logo-main">akrotopi</span>
+                        <div class="logo-stars">★★★★</div>
+                        <span class="logo-sub">APARTMENTS & STUDIOS</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Right side - Language selector and buttons -->
+            <div class="nav-right">
+                <div class="nav-language">
+                    <a href="#" class="lang-link active">GR</a>
+                    <a href="#" class="lang-link">EN</a>
+                    <a href="#" class="lang-link">DE</a>
+                </div>
+                <a href="contact.html" class="nav-btn nav-btn-outline">ΕΠΙΚΟΙΝΩΝΙΑ</a>
+                <a href="contact.html" class="nav-btn nav-btn-filled">ΚΡΑΤΗΣΗ</a>
+            </div>
+
+            <!-- Mobile menu overlay -->
+            <div class="mobile-menu-overlay" id="mobile-menu-overlay">
+                <!-- Desktop Split Menu (with image) -->
+                <div class="mobile-menu-split desktop-only">
+                    <!-- Left side - Navigation -->
+                    <div class="mobile-menu-left">
+                        <div class="mobile-menu-header">
+                            <button class="mobile-menu-close" id="mobile-menu-close">&times;</button>
+                        </div>
+                        <div class="mobile-menu-links">
+                            <div class="mobile-menu-section">
+                                <a href="explore.html" class="mobile-nav-link mobile-nav-main">Εξερευνήστε την Περιοχή</a>
+                                <a href="explore/tolo.html" class="mobile-nav-link mobile-nav-sub">Τολό</a>
+                                <a href="explore/activities.html" class="mobile-nav-link mobile-nav-sub">Δραστηριότητες</a>
+                                <a href="explore/dining.html" class="mobile-nav-link mobile-nav-sub">Γαστρονομία</a>
+                            </div>
+                            <a href="gallery.html" class="mobile-nav-link">Φωτογραφίες</a>
+                            <a href="info.html" class="mobile-nav-link">Πληροφορίες Καταλύματος</a>
+                            <a href="faq.html" class="mobile-nav-link">FAQ - Συχνές Ερωτήσεις</a>
+                            <a href="guide.html" class="mobile-nav-link">Τοπικός Οδηγός</a>
+                            <a href="offers.html" class="mobile-nav-link">Ειδικές Προσφορές</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Right side - Image with contact info -->
+                    <div class="mobile-menu-right">
+                        <div class="mobile-menu-image">
+                            <img src="assets/images/Placeholders/Slider/view-1.jpg" alt="Akrotopi View" />
+                            <div class="mobile-menu-overlay-content">
+                                <div class="mobile-contact-info">
+                                    <div class="contact-item">
+                                        <span class="contact-label">T</span>
+                                        <span class="contact-value">+30 123 456 7890</span>
+                                    </div>
+                                    <div class="contact-item">
+                                        <span class="contact-label">E</span>
+                                        <span class="contact-value">info@akrotopi.gr</span>
+                                    </div>
+                                </div>
+                                <div class="mobile-social">
+                                    <a href="#" class="social-link">
+                                        <i class="fab fa-facebook"></i>
+                                        <span>Facebook</span>
+                                    </a>
+                                    <a href="#" class="social-link">
+                                        <i class="fab fa-instagram"></i>
+                                        <span>Instagram</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mobile Fullscreen Menu (without image) -->
+                <div class="mobile-menu-fullscreen mobile-only">
+                    <!-- Close button -->
+                    <div class="mobile-menu-header">
+                        <button class="mobile-menu-close-mobile" id="mobile-menu-close-mobile">&times;</button>
+                    </div>
+                    
+                    <!-- Main Navigation -->
+                    <div class="mobile-menu-navigation">
+                        <nav class="mobile-nav-main">
+                            <a href="index.html" class="mobile-nav-link">Αρχική</a>
+                            <a href="accommodations.html" class="mobile-nav-link">Τα Διαμερίσματα</a>
+                            <a href="about.html" class="mobile-nav-link">Το Κατάλυμα</a>
+                            <a href="explore.html" class="mobile-nav-link">Εξερευνήστε την Περιοχή</a>
+                            <a href="gallery.html" class="mobile-nav-link">Φωτογραφίες</a>
+                            <a href="info.html" class="mobile-nav-link">Πληροφορίες Καταλύματος</a>
+                            <a href="faq.html" class="mobile-nav-link">FAQ</a>
+                            <a href="guide.html" class="mobile-nav-link">Τοπικός Οδηγός</a>
+                            <a href="offers.html" class="mobile-nav-link">Ειδικές Προσφορές</a>
+                        </nav>
+                        <!-- Booking Button -->
+                        <div class="mobile-menu-booking">
+                            <a href="contact.html" class="mobile-booking-btn">Κράτηση</a>
+                        </div>
+                        
+                        <!-- Contact Information -->
+                        <div class="mobile-menu-contact">
+                            <div class="mobile-contact-item">
+                                <i class="fas fa-phone"></i>
+                                <a href="tel:+302752059000">+30 27520 59000</a>
+                            </div>
+                            <div class="mobile-contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <a href="mailto:info@akrotopi.gr">info@akrotopi.gr</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1>Πληροφορίες Καταλύματος</h1>
+            <p>Όλες οι πληροφορίες που χρειάζεστε για τη διαμονή σας</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="page-content" id="main-content">
+        <div class="container">
+            <section class="content-section">
+                <h2>Γενικές Πληροφορίες</h2>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <i class="fas fa-clock"></i>
+                        <h3>Ώρες Check-in/Check-out</h3>
+                        <p><strong>Check-in:</strong> 15:00 - 22:00<br>
+                        <strong>Check-out:</strong> 08:00 - 11:00</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-key"></i>
+                        <h3>Παράδοση Κλειδιών</h3>
+                        <p>Τα κλειδιά παραδίδονται προσωπικά κατά την άφιξη. Για άφιξη εκτός ωραρίου, παρακαλούμε ενημερώστε μας.</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-wifi"></i>
+                        <h3>Internet & WiFi</h3>
+                        <p>Δωρεάν high-speed WiFi σε όλα τα διαμερίσματα. Κωδικός πρόσβασης στο welcome pack.</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-car"></i>
+                        <h3>Στάθμευση</h3>
+                        <p>Δωρεάν ιδιωτικός χώρος στάθμευσης. Μία θέση ανά διαμέρισμα.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>Κανόνες Καταλύματος</h2>
+                <div class="rules-section">
+                    <div class="rule-category">
+                        <h3><i class="fas fa-volume-down"></i> Ησυχία</h3>
+                        <ul>
+                            <li>Ώρες ησυχίας: 22:00 - 08:00</li>
+                            <li>Σεβασμός των άλλων επισκεπτών</li>
+                            <li>Μη χρήση ηχοσυστημάτων σε υψηλή ένταση</li>
+                        </ul>
+                    </div>
+                    <div class="rule-category">
+                        <h3><i class="fas fa-ban-smoking"></i> Κάπνισμα</h3>
+                        <ul>
+                            <li>Απαγορεύεται στο εσωτερικό των διαμερισμάτων</li>
+                            <li>Επιτρέπεται στα μπαλκόνια και εξωτερικούς χώρους</li>
+                            <li>Χρήση σταχτοδοχείων υποχρεωτική</li>
+                        </ul>
+                    </div>
+                    <div class="rule-category">
+                        <h3><i class="fas fa-paw"></i> Κατοικίδια</h3>
+                        <ul>
+                            <li>Επιτρέπονται με προηγούμενη συνεννόηση</li>
+                            <li>Επιπλέον χρέωση €10/βράδυ</li>
+                            <li>Απαραίτητα εμβόλια και τσιπ</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>Παροχές & Υπηρεσίες</h2>
+                <div class="amenities-overview">
+                    <div class="amenity-section">
+                        <h3>Σε κάθε Διαμέρισμα</h3>
+                        <div class="amenity-list">
+                            <span class="amenity-item"><i class="fas fa-snowflake"></i> Κλιματισμός</span>
+                            <span class="amenity-item"><i class="fas fa-tv"></i> Smart TV</span>
+                            <span class="amenity-item"><i class="fas fa-wifi"></i> WiFi</span>
+                            <span class="amenity-item"><i class="fas fa-utensils"></i> Εξοπλισμένη κουζίνα</span>
+                            <span class="amenity-item"><i class="fas fa-shower"></i> Ιδιωτικό μπάνιο</span>
+                            <span class="amenity-item"><i class="fas fa-wind"></i> Μπαλκόνι</span>
+                        </div>
+                    </div>
+                    <div class="amenity-section">
+                        <h3>Κοινές Παροχές</h3>
+                        <div class="amenity-list">
+                            <span class="amenity-item"><i class="fas fa-car"></i> Parking</span>
+                            <span class="amenity-item"><i class="fas fa-broom"></i> Καθαρισμός</span>
+                            <span class="amenity-item"><i class="fas fa-concierge-bell"></i> 24/7 Υποστήριξη</span>
+                            <span class="amenity-item"><i class="fas fa-luggage-cart"></i> Φύλαξη αποσκευών</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>Χρήσιμες Πληροφορίες</h2>
+                <div class="info-boxes">
+                    <div class="info-box">
+                        <h4>Αγορές & Φαρμακείο</h4>
+                        <p>Σούπερ μάρκετ και φαρμακείο σε απόσταση 100μ από το κατάλυμα.</p>
+                    </div>
+                    <div class="info-box">
+                        <h4>Δημόσια Συγκοινωνία</h4>
+                        <p>Στάση λεωφορείου 150μ - Συνδέσεις με Ναύπλιο και Αθήνα.</p>
+                    </div>
+                    <div class="info-box">
+                        <h4>Παραλία</h4>
+                        <p>Οργανωμένη παραλία με ξαπλώστρες και ομπρέλες σε 50μ.</p>
+                    </div>
+                    <div class="info-box">
+                        <h4>Εστιατόρια</h4>
+                        <p>Πάνω από 15 ταβέρνες και εστιατόρια σε ακτίνα 200μ.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Akrotopi Apartments & Studios</h3>
+                    <p>Τολό, Αργολίδα<br>
+                    Τηλ: +30 123 456 7890<br>
+                    Email: info@akrotopi.gr</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Χρήσιμοι Σύνδεσμοι</h4>
+                    <ul>
+                        <li><a href="about.html">Το Κατάλυμα</a></li>
+                        <li><a href="accommodations.html">Διαμερίσματα</a></li>
+                        <li><a href="contact.html">Επικοινωνία</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Ακολουθήστε μας</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="TripAdvisor"><i class="fab fa-tripadvisor"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Akrotopi Apartments & Studios. Όλα τα δικαιώματα κατοχυρωμένα.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+
+    <style>
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .info-card {
+            text-align: center;
+            padding: 2rem;
+            background: var(--gray-light);
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px var(--shadow);
+        }
+
+        .info-card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .rules-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .rule-category {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 12px var(--shadow);
+        }
+
+        .rule-category h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .rule-category ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .rule-category li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--gray-medium);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .rule-category li:before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .amenities-overview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .amenity-section {
+            background: var(--gray-light);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+        }
+
+        .amenity-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .amenity-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem;
+            background: var(--white);
+            border-radius: var(--border-radius);
+            font-size: 0.9rem;
+        }
+
+        .amenity-item i {
+            color: var(--primary-color);
+            min-width: 16px;
+        }
+
+        .info-boxes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .info-box {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--primary-color);
+            box-shadow: 0 2px 8px var(--shadow);
+        }
+
+        .info-box h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .info-grid,
+            .rules-section,
+            .amenities-overview {
+                grid-template-columns: 1fr;
+            }
+
+            .amenity-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</body>
+</html>

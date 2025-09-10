@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Το Κατάλυμα - Akrotopi Apartments & Studios</title>
+    <meta name="description" content="Μάθετε περισσότερα για το Akrotopi Apartments & Studios στο Τολό. Η ιστορία μας και οι υπηρεσίες μας.">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/images/Logos/favicon.png">
+    <link rel="shortcut icon" type="image/png" href="../assets/images/Logos/favicon.png">
+    <link rel="apple-touch-icon" href="../assets/images/Logos/favicon.png">
+    
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Left side - Hamburger menu -->
+            <div class="nav-hamburger" id="nav-hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <!-- Center - Main navigation -->
+            <div class="nav-main">
+                <a href="../accommodations.html" class="nav-link">ΔΙΑΜΕΡΙΣΜΑΤΑ</a>
+                <a href="../about.html" class="nav-link active">ΤΟ ΚΑΤΑΛΥΜΑ</a>
+            </div>
+
+            <!-- Center - Logo -->
+            <div class="nav-logo">
+                <a href="../index.html">
+                    <img src="../assets/images/Logos/Logo-dark.png" alt="Akrotopi Apartments & Studios" class="logo-image">
+                </a>
+            </div>
+
+            <!-- Right side - Language selector and buttons -->
+            <div class="nav-right">
+                <div class="nav-language">
+                    <a href="#" class="lang-link active">GR</a>
+                    <a href="#" class="lang-link">EN</a>
+                </div>
+                <a href="../contact.html" class="nav-btn nav-btn-outline">ΕΠΙΚΟΙΝΩΝΙΑ</a>
+                <a href="#" class="nav-btn nav-btn-filled">ΚΡΑΤΗΣΗ</a>
+            </div>
+
+            <!-- Mobile menu overlay -->
+            <div class="mobile-menu-overlay" id="mobile-menu-overlay">
+                <!-- Desktop Split Menu (with image) -->
+                <div class="mobile-menu-split desktop-only">
+                    <!-- Left side - Navigation -->
+                    <div class="mobile-menu-left">
+                        <div class="mobile-menu-header">
+                            <button class="mobile-menu-close" id="mobile-menu-close">&times;</button>
+                        </div>
+                        <div class="mobile-menu-links">
+                            <a href="../explore.html" class="mobile-nav-link">Εξερευνήστε την Περιοχή</a>
+                            <a href="../gallery.html" class="mobile-nav-link">Φωτογραφίες</a>
+                            <a href="../info.html" class="mobile-nav-link">Πληροφορίες Καταλύματος</a>
+                            <a href="../faq.html" class="mobile-nav-link">FAQ - Συχνές Ερωτήσεις</a>
+                            <a href="../offers.html" class="mobile-nav-link">Ειδικές Προσφορές</a>
+                        </div>
+                        <div class="mobile-menu-section">
+                        <div class="mobile-contact-info">
+                            <div class="contact-item">
+                                <span class="contact-label">T</span>
+                                <span class="contact-value">+30 123 456 7890</span>
+                            </div>
+                            <div class="contact-item">
+                                <span class="contact-label">E</span>
+                                <span class="contact-value">info@akrotopi.gr</span>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Right side - Image with contact info -->
+                    <div class="mobile-menu-right">
+                        <div class="mobile-menu-image">
+                            <img src="../assets/images/Placeholders/Slider/view-1.jpg" alt="Akrotopi View" />
+                            <div class="mobile-menu-overlay-content">
+                                
+                                <div class="mobile-social">
+                                    <a href="#" class="social-link">
+                                        <i class="fab fa-facebook"></i>
+                                        <span>Facebook</span>
+                                    </a>
+                                    <a href="#" class="social-link">
+                                        <i class="fab fa-instagram"></i>
+                                        <span>Instagram</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mobile Fullscreen Menu (without image) -->
+                <div class="mobile-menu-fullscreen mobile-only">
+                    <!-- Close button -->
+                    <div class="mobile-menu-header">
+                        <button class="mobile-menu-close-mobile" id="mobile-menu-close-mobile">&times;</button>
+                    </div>
+                    
+                    <!-- Main Navigation -->
+                    <div class="mobile-menu-navigation">
+                        <nav class="mobile-nav-main">
+                            <a href="../index.html" class="mobile-nav-link">Αρχική</a>
+                            <a href="../accommodations.html" class="mobile-nav-link">Τα Διαμερίσματα</a>
+                            <a href="../about.html" class="mobile-nav-link">Το Κατάλυμα</a>
+                            <a href="../explore.html" class="mobile-nav-link">Εξερευνήστε την Περιοχή</a>
+                            <a href="../gallery.html" class="mobile-nav-link">Φωτογραφίες</a>
+                            <a href="../info.html" class="mobile-nav-link">Πληροφορίες Καταλύματος</a>
+                            <a href="../faq.html" class="mobile-nav-link">FAQ</a>
+                            <a href="../guide.html" class="mobile-nav-link">Τοπικός Οδηγός</a>
+                            <a href="../offers.html" class="mobile-nav-link">Ειδικές Προσφορές</a>
+                        </nav>
+                        <!-- Booking Button -->
+                        <div class="mobile-menu-booking">
+                            <a href="#" class="mobile-booking-btn">Κράτηση</a>
+                        </div>
+                        
+                        <!-- Contact Information -->
+                        <div class="mobile-menu-contact">
+                            <div class="mobile-contact-item">
+                                <i class="fas fa-phone"></i>
+                                <a href="tel:+302752059000">+30 27520 59000</a>
+                            </div>
+                            <div class="mobile-contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <a href="mailto:info@akrotopi.gr">info@akrotopi.gr</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+ <!-- Hero Slider Section -->
+ <section class="hero-slider">
+    <div class="slider-container">
+        <div class="slider-wrapper" id="slider-wrapper">
+            <div class="slide active">
+                <img src="assets/images/Placeholders/Slider/view-1.jpg" alt="Akrotopi View 1" loading="lazy">
+                <div class="slide-overlay">
+                    <div class="slide-content">
+                        <h1>Το κατάλυμα μας</h1>
+                        <p>Τα διαμερίσματά μας και τα στούντιο είναι ιδανικά για ζευγάρια, οικογένειες και φίλους. Κάθε διαμέρισμα προσφέρει άνεση, πλήρη εξοπλισμό και φωτεινούς χώρους για μια ευχάριστη διαμονή στο Τολό. Είμαστε μόλις λίγα βήματα από το λιμάνι, τις παραλίες και τα δημοφιλή αξιοθέατα της Αργολίδας, ώστε να απολαύσετε την περιοχή με ευκολία.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+         <!-- Main Content -->
+     <main class="page-content" id="main-content">
+         <!-- Two Column Section -->
+         <section class="two-column-section">
+             <div class="column-image">
+                 <img src="assets/images/Placeholders/Slider/view-2.jpg" alt="Akrotopi Accommodation" />
+             </div>
+             <div class="column-text">
+                 <div class="text-content">
+                                         <h2>Μια οικογενειακή επιχείρηση</h2>
+                    <div>
+                         <p>Το Akrotopi Apartments & Studios βρίσκεται στο κέντρο του Τολού, κοντά στο λιμάνι και τις παραλίες, με θέα στο νησί Ρόμβη. Προσφέρουμε πλήρως εξοπλισμένα διαμερίσματα και στούντιο, κατάλληλα για ζευγάρια, οικογένειες και φίλους που θέλουν άνετη και πρακτική διαμονή στην Αργολίδα.</p>
+                         
+                         <p>Η φιλοξενία μας βασίζεται στην προσοχή στις ανάγκες των επισκεπτών και στις σύγχρονες ανέσεις. Με καθημερινή καθαριότητα, εξοπλισμένη κουζίνα και προαιρετικές υπηρεσίες όπως μεταφορές, ενοικίαση αυτοκινήτου ή εκδρομές με σκάφος, εξασφαλίζουμε μια ευχάριστη και εύκολη διαμονή για όλους.</p>
+                         
+                                              </div>
+                 </div>
+             </div>
+         </section>
+
+        <!-- Philosophy Section -->
+        <section class="philosophy-section">
+            <div class="section-content">
+                <div class="section-text">
+                    <h2>Η φιλοσοφία μας</h2>
+                    <div>
+                        <p>Πιστεύουμε στην αυθεντική ελληνική φιλοξενία και στη δημιουργία εμπειριών που παραμένουν αξέχαστες. Κάθε λεπτομέρεια έχει σχεδιαστεί με προσοχή για να προσφέρουμε στους επισκέπτες μας μια διαμονή που συνδυάζει την παραδοσιακή θαλπωρή με τη σύγχρονη άνεση.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Grid -->
+        <section class="gallery-grid-section">
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="assets/images/Placeholders/Slider/view-2.jpg" alt="Akrotopi - Εσωτερικοί Χώροι" />
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/Placeholders/Slider/hotel.jpg" alt="Akrotopi - Παροχές & Υπηρεσίες" />
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/Placeholders/Slider/view-1.jpg" alt="Akrotopi - Λεπτομέρειες & Θέα" />
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="facilities-services-section">
+            <div class="facilities-container">
+                <div class="facilities-grid">
+                    <!-- Left Column: Main Heading and Description -->
+                    <div class="facilities-main">
+                        <h2 class="facilities-title">Υπηρεσίες & Παροχές</h2>
+                        <p class="facilities-description">Στο Akrotopi προσφέρουμε υπηρεσίες που καλύπτουν τις ανάγκες των επισκεπτών μας. Από την άφιξή σας έως την αναχώρησή σας, φροντίζουμε ώστε η διαμονή σας στο Τολό να είναι άνετη και πρακτική.</p>
+                    </div>
+                    
+                    <!-- Middle Column: Included Services -->
+                    <div class="facilities-column">
+                        <h3 class="facilities-subtitle">Περιλαμβάνονται</h3>
+                        <ul class="facilities-list">
+                            <li>Δωρεάν Wi-Fi σε όλους τους χώρους</li>
+        <li>Δωρεάν χώρος στάθμευσης 4 θέσεων</li>
+        <li>24/7 υποστήριξη επισκεπτών</li>
+        <li>Καθημερινό καθάρισμα</li>
+        <li>Πλήρως εξοπλισμένη κουζίνα</li>
+        <li>Κλιματισμός σε όλα τα δωμάτια</li>
+        <li>Δωρεάν καφές, χυμός & εμφιαλωμένο νερό</li>
+        <li>Μπάνιο με ντους</li>
+        <li>Καθαρά λευκά είδη (πετσέτες & σεντόνια)</li>
+        <li>Προϊόντα προσωπικής υγιεινής (σαμπουάν, αφρόλουτρο, σαπούνι)</li>
+        <li>Σεσουάρ μαλλιών</li>
+        <li>Καλωσόρισμα με τοπικά προϊόντα / λιχουδιές</li>
+        <li>Τοπικές συμβουλές και οδηγίες</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Right Column: Optional Services -->
+                    <div class="facilities-column">
+                        <h3 class="facilities-subtitle">Πρόσθετες υπηρεσίες</h3>
+                        <ul class="facilities-list">
+                            <li>Υπηρεσία μεταφοράς από/προς αεροδρόμιο ή λιμάνι</li>
+        <li>Ενοικίαση αυτοκινήτου</li>
+        <li>Οργάνωση εκδρομών και θαλάσσιων δραστηριοτήτων</li>
+        <li>Παράδοση φαγητού από τοπικά εστιατόρια</li>
+        <li>Παρκοκρέβατο για παιδιά</li>
+        <li>Πετσέτες θαλάσσης</li>
+        <li>Σίδερο</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+     <!-- Footer -->
+     <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <!-- Column 1: Logo & Contact -->
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="../assets/images/Logos/Logo-light.png" alt="Akrotopi Apartments & Studios" class="footer-logo-image">
+                    </div>
+                    <div class="contact-info">
+                        <address>
+                            Τολό, Αργολίδα<br>
+                            21056 Πελοπόννησος, Ελλάδα
+                        </address>
+                        <div class="contact-details">
+                            <p class="phone">
+                                <span class="contact-label">Τ</span>
+                                <a href="tel:+302752059000">+30 27520 59000</a>
+                            </p>
+                            <p class="email">
+                                <span class="contact-label">Μ</span>
+                                <a href="mailto:info@akrotopi.gr">info@akrotopi.gr</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 2: Main Navigation -->
+                <div class="footer-navigation">
+                    <div class="nav-column">
+                        <ul>
+                            <li><a href="../accommodations.html">ΤΑ ΔΙΑΜΕΡΙΣΜΑΤΑ</a></li>
+                            <li><a href="../about.html">ΤΟ ΚΑΤΑΛΥΜΑ</a></li>
+                            <li><a href="../explore.html">ΕΞΕΡΕΥΝΗΣΤΕ ΤΗΝ ΠΕΡΙΟΧΗ</a></li>
+                            <li><a href="../gallery.html">ΦΩΤΟΓΡΑΦΙΕΣ</a></li>
+                            
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Column 3: Information -->
+                <div class="footer-navigation">
+                    <div class="nav-column">
+                        <ul>
+                            <li><a href="../contact.html">ΕΠΙΚΟΙΝΩΝΙΑ</a></li>
+                            <li><a href="../info.html">ΠΛΗΡΟΦΟΡΙΕΣ ΚΑΤΑΛΥΜΑΤΟΣ</a></li>
+                            <li><a href="../faq.html">FAQ</a></li>
+                            <li><a href="../offers.html">ΕΙΔΙΚΕΣ ΠΡΟΣΦΟΡΕΣ</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Column 4: Social Media -->
+                <div class="footer-social-column">
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-facebook"></i>
+                            <span>FACEBOOK</span>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                            <span>INSTAGRAM</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p>Copyright © Akrotopi Apartments & Studios | Made by <a class="footer-link" href="https://digital-alchemist.gr/" target="_blank">Digital Alchemist Studio</a></p>
+                    <p>MHTE: 12.45.Κ.12.2Κ.00097.0.0 | ELGEMI.176140213000</p>
+                </div>
+
+                <!-- Back to top -->
+                <div class="back-to-top">
+                    <button class="back-to-top-btn" aria-label="Επιστροφή στην κορυφή">
+                        <span class="back-to-top-text">BACK TO TOP</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7 14l5-5 5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/script.js"></script>
+</body>
+</html>

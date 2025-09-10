@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akrotopi Apartments & Studios - Τολό</title>
+    <meta name="description" content="Akrotopi Apartments & Studios στο Τολό. Διαμερίσματα και στούντιο με θέα θάλασσα και βουνό.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/Logos/favicon.png">
+    <link rel="shortcut icon" type="image/png" href="assets/images/Logos/favicon.png">
+    <link rel="apple-touch-icon" href="assets/images/Logos/favicon.png">
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Left side - Hamburger menu -->
+            <div class="nav-hamburger" id="nav-hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <!-- Center - Main navigation -->
+            <div class="nav-main">
+                <a href="../accommodations.html" class="nav-link">ΔΙΑΜΕΡΙΣΜΑΤΑ</a>
+                <a href="../about.html" class="nav-link active">ΤΟ ΚΑΤΑΛΥΜΑ</a>
+            </div>
+
+            <!-- Center - Logo -->
+            <div class="nav-logo">
+                <a href="../index.html">
+                    <img src="../assets/images/Logos/Logo-dark.png" alt="Akrotopi Apartments & Studios" class="logo-image">
+                </a>
+            </div>
+
+            <!-- Right side - Language selector and buttons -->
+            <div class="nav-right">
+                <div class="nav-language">
+                    <a href="#" class="lang-link active">GR</a>
+                    <a href="#" class="lang-link">EN</a>
+                </div>
+                <a href="../contact.html" class="nav-btn nav-btn-outline">ΕΠΙΚΟΙΝΩΝΙΑ</a>
+                <a href="#" class="nav-btn nav-btn-filled">ΚΡΑΤΗΣΗ</a>
+            </div>
+
+            <!-- Mobile menu overlay -->
+            <div class="mobile-menu-overlay" id="mobile-menu-overlay">
+                <!-- Desktop Split Menu (with image) -->
+                <div class="mobile-menu-split desktop-only">
+                    <!-- Left side - Navigation -->
+                    <div class="mobile-menu-left">
+                        <div class="mobile-menu-header">
+                            <button class="mobile-menu-close" id="mobile-menu-close">&times;</button>
+                        </div>
+                        <div class="mobile-menu-links">
+                            <a href="../explore.html" class="mobile-nav-link">Εξερευνήστε την Περιοχή</a>
+                            <a href="../gallery.html" class="mobile-nav-link">Φωτογραφίες</a>
+                            <a href="../info.html" class="mobile-nav-link">Πληροφορίες Καταλύματος</a>
+                            <a href="../faq.html" class="mobile-nav-link">FAQ - Συχνές Ερωτήσεις</a>
+                            <a href="../offers.html" class="mobile-nav-link">Ειδικές Προσφορές</a>
+                        </div>
+                        <div class="mobile-menu-section">
+                        <div class="mobile-contact-info">
+                            <div class="contact-item">
+                                <span class="contact-label">T</span>
+                                <span class="contact-value">+30 123 456 7890</span>
+                            </div>
+                            <div class="contact-item">
+                                <span class="contact-label">E</span>
+                                <span class="contact-value">info@akrotopi.gr</span>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Right side - Image with contact info -->
+                    <div class="mobile-menu-right">
+                        <div class="mobile-menu-image">
+                            <img src="../assets/images/Placeholders/Slider/view-1.jpg" alt="Akrotopi View" />
+                            <div class="mobile-menu-overlay-content">
+                                
+                                <div class="mobile-social">
+                                    <a href="#" class="social-link">
+                                        <i class="fab fa-facebook"></i>
+                                        <span>Facebook</span>
+                                    </a>
+                                    <a href="#" class="social-link">
+                                        <i class="fab fa-instagram"></i>
+                                        <span>Instagram</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mobile Fullscreen Menu (without image) -->
+                <div class="mobile-menu-fullscreen mobile-only">
+                    <!-- Close button -->
+                    <div class="mobile-menu-header">
+                        <button class="mobile-menu-close-mobile" id="mobile-menu-close-mobile">&times;</button>
+                    </div>
+                    
+                    <!-- Main Navigation -->
+                    <div class="mobile-menu-navigation">
+                        <nav class="mobile-nav-main">
+                            <a href="../index.html" class="mobile-nav-link">Αρχική</a>
+                            <a href="../accommodations.html" class="mobile-nav-link">Τα Διαμερίσματα</a>
+                            <a href="../about.html" class="mobile-nav-link">Το Κατάλυμα</a>
+                            <a href="../explore.html" class="mobile-nav-link">Εξερευνήστε την Περιοχή</a>
+                            <a href="../gallery.html" class="mobile-nav-link">Φωτογραφίες</a>
+                            <a href="../info.html" class="mobile-nav-link">Πληροφορίες Καταλύματος</a>
+                            <a href="../faq.html" class="mobile-nav-link">FAQ</a>
+                            <a href="../guide.html" class="mobile-nav-link">Τοπικός Οδηγός</a>
+                            <a href="../offers.html" class="mobile-nav-link">Ειδικές Προσφορές</a>
+                        </nav>
+                        <!-- Booking Button -->
+                        <div class="mobile-menu-booking">
+                            <a href="#" class="mobile-booking-btn">Κράτηση</a>
+                        </div>
+                        
+                        <!-- Contact Information -->
+                        <div class="mobile-menu-contact">
+                            <div class="mobile-contact-item">
+                                <i class="fas fa-phone"></i>
+                                <a href="tel:+302752059000">+30 27520 59000</a>
+                            </div>
+                            <div class="mobile-contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <a href="mailto:info@akrotopi.gr">info@akrotopi.gr</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Hero Slider Section -->
+    <section class="hero-slider">
+        <div class="slider-container">
+            <div class="slider-wrapper" id="slider-wrapper">
+                <div class="slide active">
+                    <img src="../assets/images/Placeholders/Slider/view-1.jpg" alt="Akrotopi View 1" loading="lazy">
+                    <div class="slide-overlay">
+                        <div class="slide-content">
+                            <h1>Διαμερίσματα & Studios</h1>
+                            <p>Στο Akrotopi θα βρείτε άνετα studios και διαμερίσματα με πλήρως εξοπλισμένη κουζίνα, ιδανικά για ζευγάρια, οικογένειες και παρέες φίλων. Κάθε διαμέρισμα διαθέτει μπαλκόνι με θέα στη θάλασσα του Τολού, προσφέροντας μια χαλαρή και αυθεντική εμπειρία διακοπών.
+                                Επιλέξτε ανάμεσα σε στούντιο για δύο, οικογενειακά διαμερίσματα με ξεχωριστά υπνοδωμάτια ή μεγαλύτερους χώρους με σαλόνι, ανάλογα με τις ανάγκες σας.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Apartments Section -->
+    <section class="apartments-section">
+        <div class="apartments-container">
+            <!-- Left Side - Room List -->
+            <div class="apartments-sidebar">
+                <div class="room-selector">
+                    <button class="room-tab active" data-room="all">Όλα τα διαμερίσματα</button>
+                    <button class="room-tab" data-room="studio-a">Studio Διαμέρισμα 1 - θέα θάλασσα</button>
+                    <button class="room-tab" data-room="studio-b">Studio Διαμέρισμα 2 - θέα θάλασσα</button>
+                    <button class="room-tab" data-room="standard-b1">Standard Διαμέρισμα 1 - θέα θάλασσα & βουνό</button>
+                    <button class="room-tab" data-room="standard-b2">Standard Διαμέρισμα 2 - θέα θάλασσα</button>
+                    <button class="room-tab" data-room="bunk">Διαμέρισμα με Κουκέτα - θέα θάλασσα</button>
+                    <button class="room-tab" data-room="family">Οικογενειακό Διαμέρισμα - δύο υπνοδωμάτια</button>
+                    <button class="room-tab" data-room="comfort">Διαμέρισμα με σαλόνι - θέα θάλασσα</button>
+                </div>
+            </div>
+
+            <!-- Right Side - Room Details -->
+            <div class="apartments-content">
+                <!-- Studio Διαμέρισμα 1 - θέα θάλασσα -->
+                <article class="apartment-item" data-room="studio-a">
+                    <div class="apartment-image">
+                        <img src="../assets/images/Placeholders/Accommodations/studio-1/room.jpg" alt="Studio Διαμέρισμα 1 - θέα θάλασσα">
+                    </div>
+                    <div class="apartment-details">
+                        <h3>Studio Διαμέρισμα 1 - θέα θάλασσα</h3>
+                        <div class="apartment-specs">
+                            <span>Χωρητικότητα μέχρι 2 άτομα</span>
+                            <span>Τετραγωνικά 25m²</span>
+                            <!-- <span class="price">from €85</span> -->
+                        </div>
+                        <p>Άνετο studio διαμέρισμα με μπαλκόνι και πανοραμική θέα στη θάλασσα. Ιδανικό για ζευγάρια ή μεμονωμένους ταξιδιώτες που αναζητούν απλότητα, λειτουργικότητα και αυθεντική φιλοξενία.</p>
+                        <a href="../apartments/studio-first-floor.html" class="learn-more">Δείτε εδώ περισσότερα</a>
+                    </div>
+                </article>
+
+                <!-- Studio Διαμέρισμα 2 - θέα θάλασσα -->
+                <article class="apartment-item" data-room="studio-b">
+                    <div class="apartment-image">
+                        <img src="../assets/images/Placeholders/Accommodations/studio-2/room.jpg" alt="Studio Διαμέρισμα 2 - θέα θάλασσα">
+                    </div>
+                    <div class="apartment-details">
+                        <h3>Studio Διαμέρισμα 2 - θέα θάλασσα</h3>
+                        <div class="apartment-specs">
+                            <span>Χωρητικότητα μέχρι 2 άτομα</span>
+                            <span>Τετραγωνικά 25m²</span>
+                            <!-- <span class="price">from €85</span> -->
+                        </div>
+                        <p>Φωτεινό studio διαμέρισμα με θέα στη θάλασσα, ιδανικό για δύο άτομα. Διαθέτει πλήρως εξοπλισμένη κουζίνα, άνετο υπνοδωμάτιο και ιδιωτικό μπαλκόνι για να απολαύσετε το ηλιοβασίλεμα στο Τολό.</p>
+                        <a href="../apartments/studio-second-floor.html" class="learn-more">Δείτε εδώ περισσότερα</a>
+                    </div>
+                </article>
+
+                <!-- Standard Διαμέρισμα 1 - θέα θάλασσα & βουνό -->
+                <article class="apartment-item" data-room="standard-b1">
+                    <div class="apartment-image">
+                        <img src="../assets/images/Placeholders/Accommodations/standard-1/room.jpg" alt="Standard Διαμέρισμα 1 - θέα θάλασσα & βουνό">
+                    </div>
+                    <div class="apartment-details">
+                        <h3>Standard Διαμέρισμα 1 – Θέα Θάλασσα & Βουνό</h3>
+                        <div class="apartment-specs">
+                            <span>Χωρητικότητα μέχρι 2 άτομα</span>
+                            <span>Τετραγωνικά 32m²</span>
+                            <p>Άνετο διαμέρισμα με δύο ιδιωτικά μπαλκόνια, το ένα με θέα στη θάλασσα και το άλλο στραμμένο προς το βουνό για πιο ήσυχες στιγμές χαλάρωσης. Ιδανικό για ζευγάρια ή μικρές οικογένειες που θέλουν να απολαμβάνουν διαφορετικές όψεις της φύσης από το δωμάτιό τους.</p>
+                        <a href="../apartments/standard-apartment-1.html" class="learn-more">Δείτε εδώ περισσότερα</a>
+                    </div>
+                </article>
+
+                <!-- Standard Διαμέρισμα 2 - θέα θάλασσα -->
+                <article class="apartment-item" data-room="standard-b2">
+                    <div class="apartment-image">
+                        <img src="../assets/images/Placeholders/Accommodations/standard-2/room.jpg" alt="Standard Διαμέρισμα 2 - θέα θάλασσα">
+                    </div>
+                    <div class="apartment-details">
+                        <h3>Standard Διαμέρισμα 2 - θέα θάλασσα</h3>
+                        <div class="apartment-specs">
+                            <span>Χωρητικότητα μέχρι 2 άτομα</span>
+                            <span>Τετραγωνικά 32m²</span>
+                            <!-- <span class="price">from €140</span> -->
+                        </div>
+                        <p>Λειτουργικό διαμέρισμα με ιδιωτικό μπαλκόνι και ανεμπόδιστη θέα στη θάλασσα του Τολού. Ιδανική επιλογή για δύο άτομα, προσφέροντας εύκολη πρόσβαση στο λιμάνι και στις παραλίες.</p>
+                        <a href="../apartments/standard-apartment-2.html" class="learn-more">Δείτε εδώ περισσότερα</a>
+                    </div>
+                </article>
+
+                <!-- Διαμέρισμα με Κουκέτα - θέα θάλασσα -->
+                <article class="apartment-item" data-room="bunk">
+                    <div class="apartment-image">
+                        <img src="../assets/images/Placeholders/Accommodations/bunk-beds/room.jpg" alt="Διαμέρισμα με Κουκέτα - θέα θάλασσα">
+                    </div>
+                    <div class="apartment-details">
+                        <h3>Διαμέρισμα με Κουκέτα - θέα θάλασσα</h3>
+                        <div class="apartment-specs">
+                            <span>Χωρητικότητα μέχρι 4 άτομα</span>
+                            <span>Τετραγωνικά 32m²</span>
+                            <!-- <span class="price">from €180</span> -->
+                        </div>
+                        <p>Ιδανικό για οικογένειες με μικρά παιδιά, αυτό το διαμέρισμα διαθέτει δύο μονά κρεβάτια και κουκέτα, ώστε να φιλοξενεί  έως τέσσερα άτομα. Το μπαλκόνι του έχει θέα στο νησί Ρόμβη και τη θάλασσα του Τολού.</p>
+                        <a href="../apartments/apartment-bunk-beds.html" class="learn-more">Δείτε εδώ περισσότερα</a>
+                    </div>
+                </article>
+
+                <!-- Οικογενειακό Διαμέρισμα - δύο υπνοδωμάτια -->
+                <article class="apartment-item" data-room="family">
+                    <div class="apartment-image">
+                        <img src="../assets/images/Placeholders/Accommodations/twobedroom/room.jpg" alt="Οικογενειακό Διαμέρισμα - δύο υπνοδωμάτια">
+                    </div>
+                    <div class="apartment-details">
+                        <h3>Οικογενειακό Διαμέρισμα - δύο υπνοδωμάτια</h3>
+                        <div class="apartment-specs">
+                            <span>Χωρητικότητα μέχρι 4 άτομα</span>
+                            <span>Τετραγωνικά 48m²</span>
+                            <!-- <span class="price">from €160</span> -->
+                        </div>
+                        <p>Ευρύχωρο οικογενειακό διαμέρισμα με δύο ξεχωριστά υπνοδωμάτια και δύο μπαλκόνια με θέα στη θάλασσα και στο βουνό. Ιδανικό για οικογένειες ή φίλους που θέλουν άνεση, αυτονομία και χαλαρές στιγμές στο Τολό.</p>
+                        <a href="../apartments/two-bedroom-apartment.html" class="learn-more">Δείτε εδώ περισσότερα</a>
+                    </div>
+                </article>
+
+                <!-- Διαμέρισμα με σαλόνι - θέα θάλασσα -->
+                <article class="apartment-item" data-room="comfort">
+                    <div class="apartment-image">
+                        <img src="../assets/images/Placeholders/Accommodations/comfort/room.jpg" alt="Διαμέρισμα με σαλόνι - θέα θάλασσα">
+                    </div>
+                    <div class="apartment-details">
+                        <h3>Διαμέρισμα με σαλόνι - θέα θάλασσα</h3>
+                        <div class="apartment-specs">
+                            <span>Χωρητικότητα μέχρι 4 άτομα</span>
+                            <span>Τετραγωνικά 48m²</span>
+                            <!-- <span class="price">from €110</span> -->
+                        </div>
+                        <p>Μεγαλύτερο διαμέρισμα που διαθέτει υπνοδωμάτιο και ξεχωριστό σαλόνι με καναπέ κρεβάτι. Από τα δύο μπαλκόνια του απολαμβάνετε πανοραμική θέα στη θάλασσα και το βουνό.</p>
+                        <a href="../apartments/comfort-apartment.html" class="learn-more">Δείτε εδώ περισσότερα</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <!-- Column 1: Logo & Contact -->
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="../assets/images/Logos/Logo-light.png" alt="Akrotopi Apartments & Studios" class="footer-logo-image">
+                    </div>
+                    <div class="contact-info">
+                        <address>
+                            Τολό, Αργολίδα<br>
+                            21056 Πελοπόννησος, Ελλάδα
+                        </address>
+                        <div class="contact-details">
+                            <p class="phone">
+                                <span class="contact-label">Τ</span>
+                                <a href="tel:+302752059000">+30 27520 59000</a>
+                            </p>
+                            <p class="email">
+                                <span class="contact-label">Μ</span>
+                                <a href="mailto:info@akrotopi.gr">info@akrotopi.gr</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 2: Main Navigation -->
+                <div class="footer-navigation">
+                    <div class="nav-column">
+                        <ul>
+                            <li><a href="../accommodations.html">ΤΑ ΔΙΑΜΕΡΙΣΜΑΤΑ</a></li>
+                            <li><a href="../about.html">ΤΟ ΚΑΤΑΛΥΜΑ</a></li>
+                            <li><a href="../explore.html">ΕΞΕΡΕΥΝΗΣΤΕ ΤΗΝ ΠΕΡΙΟΧΗ</a></li>
+                            <li><a href="../gallery.html">ΦΩΤΟΓΡΑΦΙΕΣ</a></li>
+                            
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Column 3: Information -->
+                <div class="footer-navigation">
+                    <div class="nav-column">
+                        <ul>
+                            <li><a href="../contact.html">ΕΠΙΚΟΙΝΩΝΙΑ</a></li>
+                            <li><a href="../info.html">ΠΛΗΡΟΦΟΡΙΕΣ ΚΑΤΑΛΥΜΑΤΟΣ</a></li>
+                            <li><a href="../faq.html">FAQ</a></li>
+                            <li><a href="../offers.html">ΕΙΔΙΚΕΣ ΠΡΟΣΦΟΡΕΣ</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Column 4: Social Media -->
+                <div class="footer-social-column">
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-facebook"></i>
+                            <span>FACEBOOK</span>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                            <span>INSTAGRAM</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p>Copyright © Akrotopi Apartments & Studios | Made by <a class="footer-link" href="https://digital-alchemist.gr/" target="_blank">Digital Alchemist Studio</a></p>
+                    <p>MHTE: 12.45.Κ.12.2Κ.00097.0.0 | ELGEMI.176140213000</p>
+                </div>
+
+                <!-- Back to top -->
+                <div class="back-to-top">
+                    <button class="back-to-top-btn" aria-label="Επιστροφή στην κορυφή">
+                        <span class="back-to-top-text">BACK TO TOP</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7 14l5-5 5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/script.js"></script>
+</body>
+</html>
