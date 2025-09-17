@@ -8,28 +8,6 @@
     box-sizing: border-box;
 }
 
-/* Enhanced smooth scrolling optimizations */
-html {
-    scroll-behavior: auto; /* Disable CSS smooth scroll to use our custom JS */
-    scroll-padding-top: 80px; /* Account for fixed header */
-}
-
-/* Optimize scrolling performance */
-* {
-    scroll-behavior: auto;
-}
-
-/* Smooth scrolling for specific elements */
-.smooth-scroll {
-    scroll-behavior: smooth;
-}
-
-/* Optimize for smooth scrolling performance */
-body {
-    -webkit-overflow-scrolling: touch; /* iOS smooth scrolling */
-    scroll-behavior: auto;
-}
-
 /* Prevent text selection on interactive elements */
 button, 
 .nav-hamburger, 
@@ -1771,7 +1749,7 @@ p {
 
 /* Hero Slider Section */
 .hero-slider {
-    margin-top: 110px;
+    margin-top: 80px;
     padding: 40px 0;
     position: relative;
     overflow: visible;
@@ -1916,9 +1894,6 @@ p {
     line-height: 1.4;
     color: #333;
     margin: 0;
-    max-width: 100%;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
 }
 
 .about-link {
@@ -1975,22 +1950,35 @@ p {
     transform: translateY(0);
 } */
 
-/* Mobile performance optimization - keep animations but make them faster */
+/* Disable scroll reveals on mobile for better performance */
 @media (max-width: 768px) {
-    .animate-fade-in,
-    .animate-slide-up,
-    .animate-scale-in {
-        transition-duration: 0.4s;
+    .scroll-reveal,
+    .about-subtitle,
+    .about-main-text,
+    .about-link,
+    .choose-room-title,
+    .room-description,
+    .room-cta,
+    .explore-title,
+    .explore-subtitle,
+    .explore-image-container,
+    .activity-nav,
+    .explore-cta,
+    .testimonials-title,
+    .testimonials-slider,
+    .testimonials-link,
+    .gallery-header,
+    .gallery-slider-container,
+    .apartment-item {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+        transition: none !important;
     }
     
-    .text-reveal-line,
-    .heading-reveal-line,
-    .paragraph-reveal-line {
-        transition-duration: 0.6s;
-    }
-    
-    .hero-slider img {
-        transition-duration: 0.8s;
+    .text-reveal-line {
+        opacity: 1 !important;
+        transform: translateY(0%) !important;
+        transition: none !important;
     }
 }
 
@@ -2099,7 +2087,6 @@ p {
     transform: scale(1.02);
 }
 
-
 .main-image-wrapper.active {
     opacity: 1;
     transform: scale(1);
@@ -2109,8 +2096,7 @@ p {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    will-change: transform; /* Optimize for GPU acceleration */
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Middle: Room List */
@@ -2128,18 +2114,18 @@ p {
     margin-bottom: 0;
     padding: 1.5rem 0;
     border-bottom: 1px solid var(--accent-color);
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     opacity: 0.6;
     cursor: pointer;
     text-align: center;
     position: relative;
     overflow: hidden;
     transform: translateX(0);
-    will-change: transform, opacity; /* Optimize for GPU acceleration */
 }
 
 .room-item:hover {
     transform: scale(1.02);
+    background: rgba(162, 175, 155, 0.02);
 }
 
 .room-item:first-child {
@@ -2204,43 +2190,40 @@ p {
     width: 100%;
     height: 100%;
     opacity: 0;
-    transition: opacity 0.4s ease-out;
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
     transform: translateY(10px);
-    z-index: 1;
 }
-
 
 .preview-images.active {
     opacity: 1;
     transform: translateY(0);
-    z-index: 2;
 }
 
 .preview-image {
     position: absolute;
     object-fit: cover;
-    transition: transform 0.2s ease;
-    will-change: transform; /* Optimize for GPU acceleration */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
 }
 
 .preview-1 {
-    width: 240px;
-    height: 170px;
-    top: 20px;
-    right: 20px;
+    width: 250px;
+    height: 180px;
+    top: 10%;
+    right: 10%;
     transform: rotate(-2deg);
     z-index: 2;
-    animation: subtleFloat1 8s ease-in-out infinite;
+    animation: float 6s ease-in-out infinite;
 }
 
 .preview-2 {
-    width: 300px;
-    height: 300px;
-    bottom: 20px;
-    left: 20px;
+    width: 220px;
+    height: 160px;
+    bottom: 15%;
+    left: 15%;
     transform: rotate(3deg);
     z-index: 1;
-    animation: subtleFloat2 8s ease-in-out infinite 3s;
+    animation: float 6s ease-in-out infinite 2s;
 }
 
 .room-description {
@@ -3427,12 +3410,12 @@ p {
     
     /* Hero Slider Mobile */
     .hero-slider {
-        padding: 80px 0 20px 0;
+        padding: 20px 0;
     }
     
     .slider-container {
-        height: 70vh;
-        min-height: 500px;
+        height: 60vh;
+        min-height: 450px;
         padding: 0 1.5rem;
     }
     
@@ -3481,17 +3464,13 @@ p {
     }
     
     .preview-1 {
-        width: 180px;
-        height: 130px;
-        top: 15px;
-        right: 15px;
+        width: 200px;
+        height: 150px;
     }
     
     .preview-2 {
-        width: 160px;
-        height: 120px;
-        bottom: 15px;
-        left: 15px;
+        width: 180px;
+        height: 130px;
     }
     
     .choose-room-container {
@@ -3686,7 +3665,7 @@ p {
     }
     
     .slider-container {
-        height: 80vh;
+        height: 50vh;
         min-height: 400px;
         padding: 0 1rem;
     }
@@ -3735,9 +3714,6 @@ p {
         line-height: 1.4;
         text-align: center;
         padding: 0 0.5rem;
-        max-width: 100%;
-        word-wrap: break-word;
-        overflow-wrap: break-word;
     }
     
     /* Choose Room Mobile - Slider Design */
@@ -3767,8 +3743,8 @@ p {
     
     .mobile-room-container {
         position: relative;
-        height: 50vh;
-        min-height: 350px;
+        height: 70vh;
+        min-height: 500px;
         overflow: hidden;
     }
     
@@ -3799,12 +3775,6 @@ p {
         height: 100%;
         object-fit: cover;
         transition: transform 0.3s ease;
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    
-    .mobile-room-image img.animate {
-        animation: fadeInUp 0.6s ease-out 0.2s both;
     }
     
     .mobile-room-overlay {
@@ -3815,12 +3785,6 @@ p {
         background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
         padding: 2rem 1.5rem 1.5rem;
         color: white;
-        opacity: 1;
-        transform: translateY(0);
-    }
-    
-    .mobile-room-overlay.animate {
-        animation: fadeInUp 0.6s ease-out 0.4s both;
     }
     
     .mobile-room-title {
@@ -3830,12 +3794,6 @@ p {
         color: white;
         margin-bottom: 0.8rem;
         line-height: 1.3;
-        opacity: 1;
-        transform: translateY(0);
-    }
-    
-    .mobile-room-title.animate {
-        animation: fadeInUp 0.6s ease-out 0.5s both;
     }
     
     .mobile-room-features {
@@ -3843,12 +3801,6 @@ p {
         gap: 0.8rem;
         margin-bottom: 1.2rem;
         flex-wrap: wrap;
-        opacity: 1;
-        transform: translateY(0);
-    }
-    
-    .mobile-room-features.animate {
-        animation: fadeInUp 0.6s ease-out 0.6s both;
     }
     
     .mobile-room-feature {
@@ -3873,12 +3825,6 @@ p {
         letter-spacing: 1px;
         transition: all 0.3s ease;
         border: 1px solid rgba(255, 255, 255, 0.3);
-        opacity: 1;
-        transform: translateY(0);
-    }
-    
-    .mobile-room-link.animate {
-        animation: fadeInUp 0.6s ease-out 0.7s both;
     }
     
     .mobile-room-link:hover {
@@ -4696,7 +4642,7 @@ img {
     max-width: 1200px;
 }
 
-.masonry-gallery .gallery-item {
+.gallery-item {
     position: absolute;
     width: calc(33.333% - 10px);
     overflow: hidden;
@@ -4933,8 +4879,6 @@ img {
     align-items: center;
     justify-content: center;
     z-index: 2;
-    opacity: 1;
-    transition: opacity 0.8s ease-out;
 }
 
 .slide-content {
@@ -4942,9 +4886,6 @@ img {
     color: white;
     max-width: 860px;
     padding: 0 2rem;
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
 .slide-content h1 {
@@ -5105,8 +5046,6 @@ img {
     background: none;
     border: none;
     box-shadow: none;
-    opacity: 1;
-    transform: translateY(0);
 }
 
 .apartment-image img {
@@ -5694,8 +5633,6 @@ img {
     .apartment-image {
         width: 380px;
         height: 380px;
-        opacity: 1;
-        transform: translateY(0);
     }
     
     .apartment-item {
@@ -5753,8 +5690,6 @@ img {
         height: 300px;
         align-self: center;
         max-width: 400px;
-        opacity: 1;
-        transform: translateY(0);
     }
 }
 
@@ -5798,8 +5733,6 @@ img {
     .apartment-image {
         width: 100%;
         height: 250px;
-        opacity: 1;
-        transform: translateY(0);
     }
 }
 
@@ -5831,12 +5764,8 @@ img {
         margin-bottom: 2.5rem;
         padding-bottom: 2.5rem;
         border-bottom: 1px solid #eee;
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    
-    .apartment-item.animate {
-        animation: fadeInUp 0.6s ease-out both;
+        opacity: 1 !important;
+        transform: none !important;
     }
     
     .apartment-item:last-child {
@@ -5849,12 +5778,6 @@ img {
         width: 100%;
         height: 250px;
         overflow: hidden;
-        opacity: 1;
-        transform: translateY(0);
-    }
-    
-    .apartment-image.animate {
-        animation: fadeInUp 0.6s ease-out 0.2s both;
     }
     
     .apartment-image img {
@@ -5865,12 +5788,6 @@ img {
     
     .apartment-details {
         text-align: center;
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    
-    .apartment-details.animate {
-        animation: fadeInUp 0.6s ease-out 0.4s both;
     }
     
     .apartment-details h3 {
@@ -5937,8 +5854,6 @@ img {
     
     .apartment-image {
         height: 220px;
-        opacity: 1;
-        transform: translateY(0);
     }
     
     .apartment-details h3 {
@@ -6875,1000 +6790,5 @@ img {
     .submit-btn-simple {
         padding: 0.7rem 1.5rem;
         font-size: 0.8rem;
-    }
-}
-
-/* ==========================================
-   ANIMATION STYLES - DAS BLEIBT INSPIRED
-   ========================================== */
-
-/* Initial hidden states for animation elements */
-.navbar {
-    opacity: 0;
-    transform: translateY(-30px);
-}
-
-.hero-slider {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-}
-
-/* Info page elements - make visible by default */
-.single-column-text-section,
-.facilities-services-section,
-.facilities-grid,
-.facilities-main,
-.facilities-column {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.hero-slider .slide.active img {
-    opacity: 1 !important; /* Hero image visible by default */
-    transform: scale(1) !important; /* No initial scale - ready to display */
-    transition: transform 0.8s ease-out, opacity 0.8s ease-out;
-}
-
-.about-subtitle,
-.about-main-text,
-.about-link,
-.choose-room-title,
-.room-description,
-.room-cta,
-.explore-title,
-.explore-subtitle,
-.testimonials-title,
-.gallery-title,
-.gallery-cta,
-/* About page elements */
-.column-image img,
-.column-text h2,
-.column-text p,
-.philosophy-section h2,
-.philosophy-section p,
-.facilities-title,
-.facilities-description,
-.facilities-subtitle,
-.facilities-list li,
-/* Room pages elements */
-.apartment-overview,
-.overview-title,
-.overview-description,
-.overview-specs,
-.spec-item,
-.gallery-section,
-.gallery-header,
-.gallery-title,
-.gallery-slide,
-.gallery-image,
-/* Offers page elements */
-.single-column-text-section,
-.text-content h2,
-.text-content p,
-.offers-deals-section,
-.deals-table,
-.pricing-note,
-.no-date-section,
-.no-date-container h2,
-.no-date-container p,
-.calendar-btn,
-/* Accommodations page elements */
-.hero-slider h1,
-.hero-slider p,
-.apartment-content,
-/* Contact page elements */
-.contact-hero h1,
-.contact-hero p,
-.contact-details,
-.contact-form,
-/* General page elements */
-.page-hero h1,
-.page-hero p,
-.page-content h2,
-.page-content h3,
-.page-content p,
-.section-title,
-.section-subtitle,
-.info-section {
-    opacity: 0;
-    transform: translateY(20px); /* Das Bleibt style - smaller initial offset */
-}
-
-/* Make section-content and text-content visible by default for info page */
-.section-content {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.text-content h2,
-.text-content p {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Make facilities elements visible by default for info page */
-.facilities-title,
-.facilities-description,
-.facilities-subtitle,
-.facilities-list li {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Force visibility for info page - override any hidden states */
-.info-page .single-column-text-section,
-.info-page .facilities-services-section,
-.info-page .facilities-grid,
-.info-page .facilities-main,
-.info-page .facilities-column,
-.info-page .section-content {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-}
-
-/* Text reveal animations for info page */
-.info-page .heading-reveal,
-.info-page .paragraph-reveal,
-.info-page .text-reveal {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.info-page .heading-reveal-line,
-.info-page .paragraph-reveal-line,
-.info-page .text-reveal-line {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Optimize text reveal performance for info page */
-.info-page .heading-reveal,
-.info-page .paragraph-reveal,
-.info-page .text-reveal {
-    will-change: transform, opacity;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-}
-
-.info-page .heading-reveal-line,
-.info-page .paragraph-reveal-line,
-.info-page .text-reveal-line {
-    will-change: transform, opacity;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-}
-
-/* Ensure all facilities grids animate properly */
-.info-page .facilities-grid.text-reveal {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.info-page .facilities-grid.text-reveal .facilities-column {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Force hero section visibility for info page */
-.info-page .hero-slider {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-}
-
-.info-page .hero-slider .slide-overlay {
-    opacity: 1 !important;
-}
-
-.info-page .hero-slider .slide-content {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-}
-
-.info-page .hero-slider .slide.active img {
-    opacity: 1 !important;
-    transform: scale(1) !important;
-}
-
-/* Hero image animation for info page */
-.info-page .hero-image {
-    opacity: 0;
-    transform: scale(1.05);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-.info-page .hero-slider.animate .hero-image {
-    opacity: 1 !important;
-    transform: scale(1) !important;
-    transition-delay: 0.2s;
-}
-
-.room-item {
-    opacity: 0;
-    transform: translateX(-20px); /* Das Bleibt style - subtle slide */
-}
-
-.preview-images {
-    opacity: 0;
-    transform: translateX(20px); /* Das Bleibt style - subtle slide */
-}
-
-.mobile-room-slide,
-.gallery-slide,
-.testimonial-slide,
-/* Image elements for all pages */
-.about-image,
-.story-image,
-.apartment-item,
-.gallery-item:not(.masonry-gallery .gallery-item),
-.content-image,
-.feature-card,
-.info-card,
-.faq-item,
-.map-wrapper {
-    opacity: 0;
-    transform: translateY(30px); /* Slightly more movement for images */
-}
-
-.activity-tag,
-.filter-btn,
-.faq-category,
-.feature-list li,
-.cta-button {
-    opacity: 0;
-    transform: translateY(20px);
-}
-
-.slider-btn {
-    opacity: 0;
-    transform: scale(0);
-}
-
-/* CSS Keyframe Animations - Das Bleibt Style */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px); /* Das Bleibt style - subtle movement */
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes subtleFloat1 {
-    0%, 100% {
-        transform: translateY(0px) rotate(-2deg);
-    }
-    50% {
-        transform: translateY(-8px) rotate(-2deg);
-    }
-}
-
-@keyframes subtleFloat2 {
-    0%, 100% {
-        transform: translateY(0px) rotate(3deg);
-    }
-    50% {
-        transform: translateY(-8px) rotate(3deg);
-    }
-}
-
-@keyframes fadeInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-20px); /* Das Bleibt style - subtle slide */
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes fadeInRight {
-    from {
-        opacity: 0;
-        transform: translateX(20px); /* Das Bleibt style - subtle slide */
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes scaleIn {
-    from {
-        opacity: 0;
-        transform: scale(0.9);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-@keyframes heroImageReveal {
-    from {
-        opacity: 0;
-        transform: scale(1.02); /* Das Bleibt style - very subtle scale */
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-/* Apply animations with delays */
-.navbar.animate {
-    animation: fadeInDown 0.6s ease-out 0.1s both;
-}
-
-.hero-slider.animate {
-    animation: fadeInUp 0.8s ease-out 0.1s both;
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-}
-
-.hero-slider.animate .slide.active img {
-    opacity: 1 !important;
-    transform: scale(1) !important;
-    transition: opacity 0.8s ease-out 0.2s, transform 0.8s ease-out 0.2s;
-}
-
-.hero-slider.animate .slide-overlay {
-    opacity: 1;
-    transition-delay: 0.4s;
-}
-
-.hero-slider.animate .slide-content {
-    opacity: 1;
-    transform: translateY(0);
-    transition-delay: 0.6s;
-}
-
-.about-hero img.animate,
-.page-hero img.animate {
-    animation: heroImageReveal 0.8s ease-out 0.3s both; /* Only animate secondary hero images */
-}
-
-/* Hero slider images start hidden and animate with container */
-.hero-slider .slide.active img {
-    opacity: 0;
-    transform: scale(1.05);
-}
-
-/* About page hero section animation (entire section fade-in) */
-.about-hero-section {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-.about-hero-section.animate {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Room pages hero section animation (entire section fade-in) */
-.room-hero-section {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-.room-hero-section.animate {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.slider-btn.animate {
-    animation: scaleIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) both;
-}
-
-.slider-btn:first-child.animate {
-    animation-delay: 0.8s;
-}
-
-.slider-btn:last-child.animate {
-    animation-delay: 1s;
-}
-
-/* Scroll-triggered animations */
-.about-subtitle.animate {
-    animation: fadeInUp 0.8s ease-out both;
-}
-
-.about-main-text.animate {
-    animation: fadeInUp 0.8s ease-out 0.2s both;
-}
-
-.about-link.animate {
-    animation: fadeInUp 0.6s ease-out 0.4s both;
-}
-
-.choose-room-title.animate {
-    animation: fadeInUp 0.6s ease-out both; /* Faster animation */
-}
-
-.room-description.animate {
-    animation: fadeInUp 0.5s ease-out 0.1s both; /* Faster with shorter delay */
-}
-
-.room-cta.animate {
-    animation: fadeInUp 0.5s ease-out 0.2s both; /* Faster with shorter delay */
-}
-
-.room-item.animate {
-    animation: fadeInLeft 0.5s ease-out both; /* Faster room item animation */
-}
-
-/* All room items appear at the same time - no stagger delays */
-
-.preview-images.animate {
-    animation: fadeInRight 0.6s ease-out both; /* Faster preview images */
-}
-
-.explore-title.animate {
-    animation: fadeInUp 0.8s ease-out both;
-}
-
-.explore-subtitle.animate {
-    animation: fadeInUp 0.6s ease-out 0.2s both;
-}
-
-.activity-tag.animate {
-    animation: fadeInUp 0.5s ease-out both;
-}
-
-.activity-tag:nth-child(1).animate { animation-delay: 0s; }
-.activity-tag:nth-child(2).animate { animation-delay: 0.1s; }
-.activity-tag:nth-child(3).animate { animation-delay: 0.2s; }
-.activity-tag:nth-child(4).animate { animation-delay: 0.3s; }
-.activity-tag:nth-child(5).animate { animation-delay: 0.4s; }
-.activity-tag:nth-child(6).animate { animation-delay: 0.5s; }
-
-.testimonials-title.animate {
-    animation: fadeInUp 0.8s ease-out both;
-}
-
-.testimonial-slide.animate {
-    animation: fadeInUp 0.8s ease-out both;
-}
-
-.gallery-title.animate {
-    animation: fadeInUp 0.8s ease-out both;
-}
-
-.gallery-cta.animate {
-    animation: fadeInUp 0.6s ease-out 0.2s both;
-}
-
-.gallery-slide.animate {
-    animation: scaleIn 0.6s ease-out both;
-}
-
-.gallery-slide:nth-child(1).animate { animation-delay: 0s; }
-.gallery-slide:nth-child(2).animate { animation-delay: 0.1s; }
-.gallery-slide:nth-child(3).animate { animation-delay: 0.2s; }
-.gallery-slide:nth-child(4).animate { animation-delay: 0.3s; }
-.gallery-slide:nth-child(5).animate { animation-delay: 0.4s; }
-.gallery-slide:nth-child(6).animate { animation-delay: 0.5s; }
-.gallery-slide:nth-child(7).animate { animation-delay: 0.6s; }
-
-.mobile-room-slide.animate {
-    animation: fadeInUp 0.6s ease-out both;
-}
-
-.mobile-room-slide:nth-child(1).animate { animation-delay: 0s; }
-.mobile-room-slide:nth-child(2).animate { animation-delay: 0.15s; }
-.mobile-room-slide:nth-child(3).animate { animation-delay: 0.3s; }
-.mobile-room-slide:nth-child(4).animate { animation-delay: 0.45s; }
-.mobile-room-slide:nth-child(5).animate { animation-delay: 0.6s; }
-.mobile-room-slide:nth-child(6).animate { animation-delay: 0.75s; }
-.mobile-room-slide:nth-child(7).animate { animation-delay: 0.9s; }
-
-/* Universal page element animations */
-.about-hero-content h1.animate,
-.hero-slider h1.animate,
-.contact-hero h1.animate,
-.page-hero h1.animate,
-.section-title.animate {
-    animation: fadeInUp 0.8s ease-out both;
-}
-
-.about-hero-content p.animate,
-.hero-slider p.animate,
-.contact-hero p.animate,
-.page-hero p.animate,
-.section-subtitle.animate {
-    animation: fadeInUp 0.6s ease-out 0.2s both;
-}
-
-.about-content h2.animate,
-.page-content h2.animate {
-    animation: fadeInUp 0.8s ease-out both;
-}
-
-.about-content p.animate,
-.page-content p.animate,
-.section-content.animate {
-    animation: fadeInUp 0.6s ease-out 0.1s both;
-}
-
-.about-image.animate,
-.story-image.animate,
-.content-image.animate {
-    animation: scaleIn 0.8s ease-out both;
-}
-
-.apartment-item.animate,
-.gallery-item.animate,
-.info-card.animate,
-.feature-card.animate {
-    animation: fadeInUp 0.6s ease-out both;
-}
-
-.apartment-item:nth-child(1).animate { animation-delay: 0s; }
-.apartment-item:nth-child(2).animate { animation-delay: 0.1s; }
-.apartment-item:nth-child(3).animate { animation-delay: 0.2s; }
-.apartment-item:nth-child(4).animate { animation-delay: 0.3s; }
-.apartment-item:nth-child(5).animate { animation-delay: 0.4s; }
-.apartment-item:nth-child(6).animate { animation-delay: 0.5s; }
-
-.gallery-item:not(.masonry-gallery .gallery-item):nth-child(1).animate { animation-delay: 0s; }
-.gallery-item:not(.masonry-gallery .gallery-item):nth-child(2).animate { animation-delay: 0.1s; }
-.gallery-item:not(.masonry-gallery .gallery-item):nth-child(3).animate { animation-delay: 0.2s; }
-.gallery-item:not(.masonry-gallery .gallery-item):nth-child(4).animate { animation-delay: 0.3s; }
-.gallery-item:not(.masonry-gallery .gallery-item):nth-child(5).animate { animation-delay: 0.4s; }
-.gallery-item:not(.masonry-gallery .gallery-item):nth-child(6).animate { animation-delay: 0.5s; }
-
-.contact-details.animate {
-    animation: fadeInLeft 0.8s ease-out both;
-}
-
-.contact-form.animate {
-    animation: fadeInRight 0.8s ease-out 0.2s both;
-}
-
-.map-wrapper.animate {
-    animation: scaleIn 0.8s ease-out 0.4s both;
-}
-
-.faq-item.animate {
-    animation: fadeInUp 0.6s ease-out both;
-}
-
-.faq-item:nth-child(1).animate { animation-delay: 0s; }
-.faq-item:nth-child(2).animate { animation-delay: 0.1s; }
-.faq-item:nth-child(3).animate { animation-delay: 0.2s; }
-.faq-item:nth-child(4).animate { animation-delay: 0.3s; }
-.faq-item:nth-child(5).animate { animation-delay: 0.4s; }
-
-.filter-btn.animate,
-.faq-category.animate {
-    animation: fadeInUp 0.5s ease-out both;
-}
-
-.filter-btn:nth-child(1).animate { animation-delay: 0s; }
-.filter-btn:nth-child(2).animate { animation-delay: 0.1s; }
-.filter-btn:nth-child(3).animate { animation-delay: 0.2s; }
-.filter-btn:nth-child(4).animate { animation-delay: 0.3s; }
-
-.feature-list li.animate {
-    animation: fadeInLeft 0.6s ease-out both;
-}
-
-.feature-list li:nth-child(1).animate { animation-delay: 0s; }
-.feature-list li:nth-child(2).animate { animation-delay: 0.1s; }
-.feature-list li:nth-child(3).animate { animation-delay: 0.2s; }
-.feature-list li:nth-child(4).animate { animation-delay: 0.3s; }
-.feature-list li:nth-child(5).animate { animation-delay: 0.4s; }
-
-.cta-button.animate,
-.info-section.animate {
-    animation: fadeInUp 0.8s ease-out both;
-}
-
-/* About page specific animations */
-.column-image img.animate {
-    animation: scaleIn 0.8s ease-out both; /* Left side image fade-in */
-}
-
-.column-text h2.animate {
-    animation: fadeInUp 0.8s ease-out both;
-}
-
-.column-text p.animate {
-    animation: fadeInUp 0.6s ease-out 0.2s both;
-}
-
-.philosophy-section h2.animate {
-    animation: fadeInUp 0.8s ease-out both;
-}
-
-.philosophy-section p.animate {
-    animation: fadeInUp 0.6s ease-out 0.2s both;
-}
-
-.facilities-title.animate {
-    animation: fadeInUp 0.8s ease-out both;
-}
-
-.facilities-description.animate {
-    animation: fadeInUp 0.6s ease-out 0.2s both;
-}
-
-.facilities-subtitle.animate {
-    animation: fadeInUp 0.6s ease-out both;
-}
-
-.facilities-list li.animate {
-    animation: fadeInLeft 0.5s ease-out both; /* Line by line animation */
-}
-
-/* Room pages specific animations */
-.apartment-overview.animate {
-    animation: fadeInUp 0.8s ease-out both;
-}
-
-.overview-title.animate {
-    animation: fadeInUp 0.8s ease-out both;
-}
-
-.overview-description.animate {
-    animation: fadeInUp 0.6s ease-out 0.2s both;
-}
-
-.overview-specs.animate {
-    animation: fadeInUp 0.8s ease-out 0.4s both;
-}
-
-.spec-item.animate {
-    animation: fadeInUp 0.5s ease-out both;
-}
-
-.gallery-section.animate {
-    animation: fadeInUp 0.8s ease-out both;
-}
-
-.gallery-header.animate {
-    animation: fadeInUp 0.8s ease-out both;
-}
-
-.gallery-title.animate {
-    animation: fadeInUp 0.8s ease-out both;
-}
-
-.gallery-slide.animate {
-    animation: scaleIn 0.6s ease-out both;
-}
-
-.gallery-image.animate {
-    animation: scaleIn 0.6s ease-out both;
-}
-
-/* Offers page specific animations */
-.single-column-text-section.animate {
-    animation: fadeInUp 0.8s ease-out both;
-}
-
-.text-content h2.animate {
-    animation: fadeInUp 0.8s ease-out both;
-}
-
-.text-content p.animate {
-    animation: fadeInUp 0.6s ease-out 0.2s both;
-}
-
-/* Info page specific animations */
-.facilities-services-section.animate {
-    animation: fadeInUp 0.8s ease-out both;
-}
-
-.facilities-grid.animate {
-    animation: fadeInUp 0.6s ease-out 0.2s both;
-}
-
-.facilities-main.animate {
-    animation: fadeInUp 0.6s ease-out 0.3s both;
-}
-
-.facilities-column.animate {
-    animation: fadeInUp 0.6s ease-out 0.4s both;
-}
-
-.offers-deals-section.animate {
-    animation: fadeInUp 0.8s ease-out both;
-}
-
-.deals-table.animate {
-    animation: fadeInUp 0.8s ease-out 0.2s both;
-}
-
-.pricing-note.animate {
-    animation: fadeInUp 0.6s ease-out 0.5s both;
-}
-
-.no-date-section.animate {
-    animation: fadeInUp 0.8s ease-out both;
-}
-
-.no-date-container h2.animate {
-    animation: fadeInUp 0.8s ease-out both;
-}
-
-.no-date-container p.animate {
-    animation: fadeInUp 0.6s ease-out 0.2s both;
-}
-
-.calendar-btn.animate {
-    animation: scaleIn 0.6s ease-out 0.4s both;
-}
-
-/* Table row animations */
-.deals-table tbody tr {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.deals-table tbody tr.animate {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Base Animation Classes */
-.animate-fade-in {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.animate-fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.animate-slide-up {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.animate-slide-up.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.animate-scale-in {
-    opacity: 0;
-    transform: scale(0.9);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.animate-scale-in.visible {
-    opacity: 1;
-    transform: scale(1);
-}
-
-/* Performance optimizations for animations */
-.will-animate {
-    will-change: transform, opacity;
-}
-
-.gpu-accelerate {
-    transform: translateZ(0);
-    backface-visibility: hidden;
-    perspective: 1000px;
-}
-
-/* Smooth scrolling for the entire page */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Enhanced transitions for interactive elements */
-.nav-link,
-.nav-btn,
-.room-link,
-.gallery-image,
-.testimonial-slide,
-.activity-tag {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Das Bleibt style hover effects - very subtle */
-.nav-btn:hover {
-    transform: translateY(-1px); /* Minimal lift */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Softer shadow */
-}
-
-.room-link:hover {
-    transform: translateY(-0.5px); /* Very subtle */
-}
-
-.activity-tag:hover {
-    transform: translateY(-1px);
-    background-color: rgba(162, 175, 155, 0.1); /* Subtle background change */
-}
-
-.gallery-slide:hover .gallery-image {
-    transform: scale(1.02); /* Das Bleibt style - very subtle zoom */
-}
-
-/* Room item hover effects */
-.room-item:hover {
-    transform: translateX(-20px) scale(1.01); /* Minimal scale on hover */
-}
-
-/* Button micro-interactions */
-.nav-btn:active {
-    transform: translateY(0) scale(0.98); /* Subtle press effect */
-}
-
-/* Image hover effects throughout the site */
-.main-image:hover {
-    transform: scale(1.02); /* Consistent subtle zoom */
-}
-
-.preview-image:hover {
-    transform: scale(1.02) rotate(-2deg); /* Slight rotation maintained but smaller scale */
-}
-
-/* Image reveal animations */
-.image-reveal {
-    overflow: hidden;
-}
-
-.image-reveal img {
-    transform: scale(1.1);
-    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.image-reveal.visible img {
-    transform: scale(1);
-}
-
-/* Text reveal animations */
-.text-reveal {
-    overflow: hidden;
-}
-
-.text-reveal-line {
-    display: block;
-    opacity: 0;
-    transform: translateY(100%);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.text-reveal.visible .text-reveal-line {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Stagger animation delays */
-.stagger-1 { transition-delay: 0.1s; }
-.stagger-2 { transition-delay: 0.2s; }
-.stagger-3 { transition-delay: 0.3s; }
-.stagger-4 { transition-delay: 0.4s; }
-.stagger-5 { transition-delay: 0.5s; }
-
-/* Navigation animation enhancements */
-.navbar {
-    transition: background-color 0.3s ease;
-}
-
-/* Hero section animation enhancements */
-.hero-slider img {
-    transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1), 
-                opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.slider-btn {
-    transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55),
-                opacity 0.6s ease;
-}
-
-/* Room gallery animation enhancements */
-.room-item {
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-                opacity 0.3s ease;
-}
-
-
-/* Activity section animation enhancements */
-.activity-tag {
-    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-                opacity 0.5s ease,
-                background-color 0.3s ease,
-                color 0.3s ease;
-}
-
-.activity-description {
-    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1),
-                opacity 0.8s ease;
-}
-
-/* Gallery and testimonial enhancements */
-.gallery-slide,
-.testimonial-slide {
-    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1),
-                opacity 0.6s ease;
-}
-
-/* Hide scrollbar from gallery slider */
-.gallery-slider-container,
-.gallery-slider {
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* Internet Explorer 10+ */
-}
-
-.gallery-slider-container::-webkit-scrollbar,
-.gallery-slider::-webkit-scrollbar {
-    display: none; /* Safari and Chrome */
-}
-
-/* Ensure gallery slider maintains horizontal scroll functionality */
-.gallery-slider {
-    overflow-x: auto;
-    overflow-y: hidden;
-}
-
-/* Mobile optimizations */
-@media (max-width: 768px) {
-    .animate-fade-in,
-    .animate-slide-up,
-    .animate-scale-in {
-        transition-duration: 0.4s;
-    }
-    
-    .text-reveal-line {
-        transition-duration: 0.6s;
-    }
-    
-    .hero-slider img {
-        transition-duration: 0.8s;
-    }
-}
-
-/* Accessibility Improvements */
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-    }
-    
-    .navbar,
-    .hero-slider img,
-    .animate-fade-in,
-    .animate-slide-up,
-    .animate-scale-in,
-    .text-reveal-line,
-    .room-item,
-    .preview-images,
-    .activity-tag,
-    .activity-description,
-    .gallery-slide,
-    .testimonial-slide {
-        transition: none !important;
-        animation: none !important;
-    }
-    
-    html {
-        scroll-behavior: auto !important;
     }
 }

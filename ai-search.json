@@ -1,0 +1,118 @@
+{
+  "business": {
+    "name": "Akrotopi Apartments & Studios",
+    "type": "Vacation Rental / Apartments",
+    "location": {
+      "address": "Σεκέρι 96, Τολό, Αργολίδα 21056, Ελλάδα",
+      "city": "Τολό (Tolo)",
+      "region": "Αργολίδα (Argolida)",
+      "country": "Ελλάδα (Greece)",
+      "coordinates": {
+        "latitude": 37.5199,
+        "longitude": 22.8517
+      }
+    },
+    "contact": {
+      "phone": "+30 27520 59000",
+      "email": "info@akrotopi.gr",
+      "website": "https://akrotopi.gr"
+    },
+    "description": "Akrotopi Apartments & Studios offers comfortable accommodation in Tolo, near Nafplio, Greece. Perfect for families, couples, and friends seeking a peaceful vacation in Argolida with friendly hospitality and all modern amenities.",
+    "amenities": [
+      "Free WiFi in all rooms",
+      "Air conditioning",
+      "Free parking (4 spaces)",
+      "Sea and mountain views",
+      "Fully equipped kitchens",
+      "Close to beaches",
+      "Walking distance to Tolo center",
+      "Near Nafplio attractions"
+    ],
+    "accommodation_types": [
+      {
+        "type": "Studio First Floor",
+        "description": "Cozy studio on the first floor with modern amenities"
+      },
+      {
+        "type": "Studio Second Floor", 
+        "description": "Comfortable studio on the second floor with great views"
+      },
+      {
+        "type": "Standard Apartment 1",
+        "description": "Standard apartment with sea and mountain views"
+      },
+      {
+        "type": "Standard Apartment 2",
+        "description": "Well-appointed standard apartment for comfortable stay"
+      },
+      {
+        "type": "Comfort Apartment",
+        "description": "Spacious comfort apartment with enhanced amenities"
+      },
+      {
+        "type": "Two-Bedroom Apartment",
+        "description": "Perfect for families, spacious two-bedroom accommodation"
+      },
+      {
+        "type": "Apartment with Bunk Beds",
+        "description": "Family-friendly apartment with bunk beds for children"
+      }
+    ],
+    "policies": {
+      "check_in": "15:00 - 17:00",
+      "check_out": "10:00 - 12:00",
+      "quiet_hours": "22:00 - 08:00",
+      "pets": "Not allowed",
+      "smoking": "Outdoor areas only"
+    },
+    "nearby_attractions": [
+      "Tolo Beach - walking distance",
+      "Nafplio - 10km",
+      "Epidaurus Ancient Theatre - 30km",
+      "Mycenae Archaeological Site - 40km",
+      "Palamidi Castle - 10km",
+      "Bourtzi Castle - 10km"
+    ],
+    "keywords": [
+      "Tolo apartments",
+      "Nafplio accommodation", 
+      "Argolida vacation rental",
+      "Greece apartments",
+      "Peloponnese accommodation",
+      "family apartments Greece",
+      "sea view apartments",
+      "Tolo studios",
+      "vacation rental Greece"
+    ]
+  },
+  "ai_search_optimization": {
+    "last_updated": "2025-01-17",
+    "content_freshness": "regularly_updated",
+    "language": "Greek (primary), English (secondary)",
+    "target_audience": [
+      "Families seeking vacation accommodation",
+      "Couples looking for romantic getaways", 
+      "Travelers exploring Peloponnese",
+      "Visitors to Nafplio and Argolida",
+      "Beach vacation seekers"
+    ],
+    "seasonal_info": {
+      "peak_season": "June - September",
+      "shoulder_season": "April-May, October",
+      "winter_availability": "Limited, contact for availability"
+    },
+    "booking_info": {
+      "advance_booking_recommended": true,
+      "minimum_stay": {
+        "summer": "3 nights",
+        "winter": "2 nights"
+      },
+      "special_offers": [
+        "Early Bird - 25% discount for summer bookings made in winter",
+        "Last Minute - 15% discount for spring bookings",
+        "Extended Stay - 20% discount for 7+ nights",
+        "Family Deals - 18% discount for family accommodations"
+      ]
+    }
+  }
+}

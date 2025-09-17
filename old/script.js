@@ -618,20 +618,17 @@ function initializeChooseRoom() {
         previewImages.forEach(images => images.classList.remove('active'));
         mainImageWrappers.forEach(wrapper => wrapper.classList.remove('active'));
         
-        // Small delay to ensure smooth transition
-        setTimeout(() => {
-            // Show corresponding preview images
-            const correspondingPreviewImages = document.querySelector(`.preview-images[data-room="${roomType}"]`);
-            if (correspondingPreviewImages) {
-                correspondingPreviewImages.classList.add('active');
-            }
-            
-            // Show corresponding main image
-            const correspondingMainImage = document.querySelector(`.main-image-wrapper[data-room="${roomType}"]`);
-            if (correspondingMainImage) {
-                correspondingMainImage.classList.add('active');
-            }
-        }, 50);
+        // Show corresponding preview images immediately for smoother transition
+        const correspondingPreviewImages = document.querySelector(`.preview-images[data-room="${roomType}"]`);
+        if (correspondingPreviewImages) {
+            correspondingPreviewImages.classList.add('active');
+        }
+        
+        // Show corresponding main image immediately
+        const correspondingMainImage = document.querySelector(`.main-image-wrapper[data-room="${roomType}"]`);
+        if (correspondingMainImage) {
+            correspondingMainImage.classList.add('active');
+        }
     }
     
     // Add hover events to room items
@@ -640,67 +637,42 @@ function initializeChooseRoom() {
             const roomType = roomItem.getAttribute('data-room');
             showRoomImages(roomType);
         });
-        
-        roomItem.addEventListener('mouseleave', () => {
-            // Reset to first room when mouse leaves
-            showRoomImages('studio-1');
-        });
     });
     
-    // Optimized parallax effect with throttling
+    // Add parallax effect on mouse move
     if (gallery) {
-        let isMouseMoving = false;
-        let animationFrame = null;
-        
-        const handleMouseMove = (e) => {
-            if (!isMouseMoving) {
-                isMouseMoving = true;
-                animationFrame = requestAnimationFrame(() => {
-                    const rect = gallery.getBoundingClientRect();
-                    const x = e.clientX - rect.left;
-                    const y = e.clientY - rect.top;
-                    const centerX = rect.width / 2;
-                    const centerY = rect.height / 2;
-                    
-                    const deltaX = (x - centerX) / centerX;
-                    const deltaY = (y - centerY) / centerY;
-                    
-                    const moveX = deltaX * 10; // Reduced from 20px to 10px
-                    const moveY = deltaY * 10; // Reduced from 20px to 10px
-                    
-                    // Apply parallax to active main image
-                    const activeMainImage = document.querySelector('.main-image-wrapper.active .main-image');
-                    if (activeMainImage) {
-                        activeMainImage.style.transform = `translate(${moveX}px, ${moveY}px) scale(1.02)`; // Reduced scale
-                    }
-                    
-                    // Apply parallax to preview images (simplified)
-                    const activePreviewImages = document.querySelectorAll('.preview-images.active .preview-image');
-                    activePreviewImages.forEach((img, index) => {
-                        const multiplier = index % 2 === 0 ? -0.3 : 0.3; // Reduced from 0.5
-                        const rotation = img.classList.contains('preview-1') ? '-2deg' : '3deg';
-                        img.style.transform = `translate(${moveX * multiplier}px, ${moveY * multiplier}px) rotate(${rotation})`;
-                    });
-                    
-                    isMouseMoving = false;
-                });
+        gallery.addEventListener('mousemove', (e) => {
+            const rect = gallery.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            const deltaX = (x - centerX) / centerX;
+            const deltaY = (y - centerY) / centerY;
+            
+            const moveX = deltaX * 20; // Maximum movement of 20px
+            const moveY = deltaY * 20;
+            
+            // Apply parallax to active main image
+            const activeMainImage = document.querySelector('.main-image-wrapper.active .main-image');
+            if (activeMainImage) {
+                activeMainImage.style.transform = `translate(${moveX}px, ${moveY}px) scale(1.05)`;
             }
-        };
-        
-        gallery.addEventListener('mousemove', handleMouseMove, { passive: true });
+            
+            // Apply parallax to preview images (opposite direction for depth)
+            const activePreviewImages = document.querySelectorAll('.preview-images.active .preview-image');
+            activePreviewImages.forEach((img, index) => {
+                const multiplier = index % 2 === 0 ? -0.5 : 0.5;
+                img.style.transform = `translate(${moveX * multiplier}px, ${moveY * multiplier}px) rotate(${img.classList.contains('preview-1') ? '-2deg' : '3deg'})`;
+            });
+        });
         
         gallery.addEventListener('mouseleave', () => {
-            // Cancel any pending animation frame
-            if (animationFrame) {
-                cancelAnimationFrame(animationFrame);
-                animationFrame = null;
-            }
-            isMouseMoving = false;
-            
             // Reset transforms for active main image
             const activeMainImage = document.querySelector('.main-image-wrapper.active .main-image');
             if (activeMainImage) {
-                activeMainImage.style.transform = 'scale(1.02)'; // Reduced scale
+                activeMainImage.style.transform = '';
             }
             
             const allPreviewImages = document.querySelectorAll('.preview-image');
