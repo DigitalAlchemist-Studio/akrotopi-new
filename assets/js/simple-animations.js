@@ -532,56 +532,122 @@
             });
         });
 
-        // 5. Masonry Gallery Layout (for gallery.html)
+        // 5. Optimized Masonry Gallery Layout with Custom Lazy Loading (for gallery.html)
         const masonryGallery = document.querySelector('.masonry-gallery');
         if (masonryGallery) {
-            const layoutMasonry = () => {
-                const items = masonryGallery.querySelectorAll('.gallery-item');
-                const containerWidth = masonryGallery.offsetWidth;
-                const gap = 15;
-                
-                // Determine number of columns based on screen size
-                let numColumns = 3;
-                if (containerWidth <= 480) {
-                    numColumns = 1;
-                } else if (containerWidth <= 768) {
-                    numColumns = 2;
-                }
-                
-                const itemWidth = (containerWidth - (gap * (numColumns - 1))) / numColumns;
-                const columns = new Array(numColumns).fill(0); // Track column heights
-                
-                items.forEach((item) => {
-                    // Find the shortest column
-                    const shortestColumnIndex = columns.indexOf(Math.min(...columns));
-                    const left = shortestColumnIndex * (itemWidth + gap);
-                    const top = columns[shortestColumnIndex];
-                    
-                    item.style.left = `${left}px`;
-                    item.style.top = `${top}px`;
-                    
-                    // Update column height
-                    columns[shortestColumnIndex] += item.offsetHeight + gap;
+            let isLayouting = false;
+            let layoutTimeout;
+            let loadedImages = 0;
+            const totalImages = masonryGallery.querySelectorAll('.gallery-image').length;
+            
+            // Custom lazy loading implementation
+            const lazyLoadImages = () => {
+                const images = masonryGallery.querySelectorAll('.gallery-image[data-src]');
+                const imageObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            const src = img.getAttribute('data-src');
+                            
+                            if (src) {
+                                img.src = src;
+                                img.removeAttribute('data-src');
+                                imageObserver.unobserve(img);
+                                
+                                // Load image with error handling
+                                img.onload = () => {
+                                    loadedImages++;
+                                    debouncedLayout();
+                                };
+                                img.onerror = () => {
+                                    console.warn('Failed to load image:', src);
+                                    loadedImages++;
+                                };
+                            }
+                        }
+                    });
+                }, {
+                    rootMargin: '50px 0px', // Start loading 50px before image comes into view
+                    threshold: 0.1
                 });
                 
-                // Set container height
-                masonryGallery.style.height = `${Math.max(...columns)}px`;
+                images.forEach(img => imageObserver.observe(img));
             };
             
-            // Layout on load and resize
+            const layoutMasonry = () => {
+                if (isLayouting) return;
+                isLayouting = true;
+                
+                // Use requestAnimationFrame for smoother performance
+                requestAnimationFrame(() => {
+                    const items = masonryGallery.querySelectorAll('.gallery-item');
+                    const containerWidth = masonryGallery.offsetWidth;
+                    const gap = 15;
+                    
+                    // For very small screens (mobile), use simple stacked layout
+                    if (containerWidth <= 480) {
+                        items.forEach((item) => {
+                            item.style.position = 'relative';
+                            item.style.left = '0';
+                            item.style.top = '0';
+                            item.style.width = '100%';
+                            item.style.marginBottom = '8px';
+                        });
+                        masonryGallery.style.height = 'auto';
+                        isLayouting = false;
+                        return;
+                    }
+                    
+                    // Determine number of columns based on screen size
+                    let numColumns = 3;
+                    if (containerWidth <= 768) {
+                        numColumns = 2;
+                    }
+                    
+                    const itemWidth = (containerWidth - (gap * (numColumns - 1))) / numColumns;
+                    const columns = new Array(numColumns).fill(0);
+                    
+                    items.forEach((item) => {
+                        // Reset positioning for masonry layout
+                        item.style.position = 'absolute';
+                        item.style.width = `${itemWidth}px`;
+                        item.style.marginBottom = '0';
+                        
+                        // Find the shortest column
+                        const shortestColumnIndex = columns.indexOf(Math.min(...columns));
+                        const left = shortestColumnIndex * (itemWidth + gap);
+                        const top = columns[shortestColumnIndex];
+                        
+                        item.style.left = `${left}px`;
+                        item.style.top = `${top}px`;
+                        
+                        // Update column height
+                        columns[shortestColumnIndex] += item.offsetHeight + gap;
+                    });
+                    
+                    // Set container height
+                    masonryGallery.style.height = `${Math.max(...columns)}px`;
+                    isLayouting = false;
+                });
+            };
+            
+            // Debounced layout function
+            const debouncedLayout = () => {
+                clearTimeout(layoutTimeout);
+                layoutTimeout = setTimeout(layoutMasonry, 50);
+            };
+            
+            // Initialize lazy loading
+            lazyLoadImages();
+            
+            // Layout on load
             layoutMasonry();
             
-            // Debounced resize handler for better performance
+            // Optimized resize handler
             let resizeTimeout;
             window.addEventListener('resize', () => {
                 clearTimeout(resizeTimeout);
-                resizeTimeout = setTimeout(layoutMasonry, 100);
-            });
-            
-            // Layout when images load
-            const images = masonryGallery.querySelectorAll('.gallery-image');
-            images.forEach(img => {
-                img.addEventListener('load', layoutMasonry);
+                resizeTimeout = setTimeout(debouncedLayout, 150);
             });
         }
 
